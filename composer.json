@@ -1,0 +1,35 @@
+{
+    "name": "novay/logify",
+    "description": "Logify is a Laravel package for logging activities with enhanced features.",
+    "keywords": ["logging", "laravel", "activity log", "monolog"],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/novay/logify",
+    "authors": [
+        {
+            "name": "Novianto Rahmadi",
+            "email": "novay@btekno.id"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Novay\\Logify\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^12.0", 
+        "livewire/flux": "^2.1.1"
+    }, 
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Novay\\Logify\\LogifyServiceProvider"
+            ]
+        }
+    }, 
+    "minimum-stability": "dev"
+}
