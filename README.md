@@ -1,9 +1,3 @@
-Tentu, fungsi-fungsi ini sangat penting untuk dokumentasi. Saya akan menambahkan penjelasan yang lebih rinci tentang bagaimana fungsi-fungsi tersebut bekerja dan bagaimana menggunakannya dalam *README* Anda.
-
-Berikut adalah versi *README* yang diperbarui, dengan fokus pada penjelasan fungsi-fungsi yang Anda berikan.
-
------
-
 # Logify
 
 Logify adalah paket Laravel yang dirancang untuk mempermudah pencatatan aktivitas dalam aplikasi Anda. Paket ini menyediakan cara mudah untuk mencatat aktivitas pengguna, sehingga lebih mudah untuk melacak perubahan dan tindakan yang dilakukan oleh pengguna.
