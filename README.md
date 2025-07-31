@@ -1,4 +1,4 @@
-# Logify
+# [Personal Use] Logify
 
 Logify adalah paket Laravel yang dirancang untuk mempermudah pencatatan aktivitas dalam aplikasi Anda. Paket ini menyediakan cara mudah untuk mencatat aktivitas pengguna, sehingga lebih mudah untuk melacak perubahan dan tindakan yang dilakukan oleh pengguna.
 
