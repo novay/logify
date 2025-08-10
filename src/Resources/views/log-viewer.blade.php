@@ -1,5 +1,5 @@
 <div>
-    <div class="mx-auto w-full [:where(&)]:max-w-7xl px-0 lg:px-4 py-6">
+    <div class="mx-auto w-full">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-8">
             <div class="col-span-1 lg:col-span-12 space-y-6">
                 <div class="space-y-1">
@@ -98,7 +98,7 @@
                                     </tr>
                                     @forelse($parsed_log_entries as $index => $entry)
                                         <tr class="hover:bg-gray-50 @if(in_array($entry['severity'], ['EMERGENCY', 'CRITICAL', 'ALERT'])) bg-red-100/50 @elseif($entry['severity'] === 'ERROR') bg-red-50/50 @elseif($entry['severity'] === 'WARNING') bg-yellow-50/50 @endif">
-                                            <td class="px-6 py-4 whitespace-nowrap">
+                                            <td class="px-3 py-1.5 whitespace-nowrap">
                                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
                                                     @if(in_array($entry['severity'], ['EMERGENCY', 'CRITICAL', 'ALERT', 'ERROR'])) bg-red-100 text-red-800
                                                     @elseif($entry['severity'] === 'WARNING') bg-yellow-100 text-yellow-800
@@ -108,16 +108,16 @@
                                                     {{ $entry['severity'] }}
                                                 </span>
                                             </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            <td class="px-3 py-1.5 whitespace-nowrap text-sm text-gray-900">
                                                 {{ \Carbon\Carbon::parse($entry['datetime'])->format('Y-m-d H:i:s') }}
                                             </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            <td class="px-3 py-1.5 whitespace-nowrap text-sm text-gray-900">
                                                 {{ $entry['causer'] }}
                                             </td>
-                                            <td class="px-6 py-4 text-sm text-gray-900 text-wrap max-w-xl">
+                                            <td class="px-3 py-1.5 text-sm text-gray-900 text-wrap max-w-xl">
                                                 {{ Str::limit($entry['message'], 150) }}
                                             </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <td class="px-3 py-1.5 whitespace-nowrap text-right text-sm font-medium">
                                                 @if(!empty($entry['context']) || !empty($entry['trace']))
                                                     <button wire:click="toggleExpand({{ $index }})" class="text-indigo-600 hover:text-indigo-900 focus:outline-none p-1 rounded-full hover:bg-indigo-100">
                                                         @if(in_array($index, $expanded_entries))
@@ -154,7 +154,7 @@
                                         @endif
                                     @empty
                                         <tr>
-                                            <td colspan="5" class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-500">
+                                            <td colspan="5" class="px-3 py-1.5 whitespace-nowrap text-center text-sm text-gray-500">
                                                 Tidak ada entri log untuk tanggal {{ $selected_date }}.
                                             </td>
                                         </tr>

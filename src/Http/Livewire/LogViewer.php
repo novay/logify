@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class LogViewer extends Component
 {
-    // Properti utama
     public $selected_date;
     public $parsed_log_entries = [];
     public $log_lines_per_page = 25;
@@ -20,16 +19,13 @@ class LogViewer extends Component
     public $total_pages = 1;
     public $total_entries = 0;
 
-    // Properti untuk filter
     public $search_query = '';
     public $filter_level = '';
     public $filter_causer = ''; 
-    public $unique_causers = []; // Properti baru untuk daftar causer unik
+    public $unique_causers = []; 
 
-    // Properti untuk expanded rows
     public $expanded_entries = [];
 
-    // Menggunakan Query String agar state tetap di URL
     protected $queryString = ['selected_date', 'current_page', 'search_query', 'filter_level', 'filter_causer'];
 
     public function mount()
@@ -103,7 +99,7 @@ class LogViewer extends Component
         $allParsedEntries = collect();
         $isJsonLogFile = Str::startsWith($fileName, 'govrn-') || Str::startsWith($fileName, 'logify-');
 
-        $causers = collect(); // Koleksi sementara untuk causer unik
+        $causers = collect(); 
         foreach ($lines as $line) {
             $entry = $this->parseLogLine($line, $isJsonLogFile);
             if ($entry) {
@@ -112,7 +108,6 @@ class LogViewer extends Component
             }
         }
         
-        // Ambil daftar causer unik, tambahkan 'System', dan urutkan
         $this->unique_causers = $causers->unique()->sort()->values()->toArray();
         if (!in_array('System', $this->unique_causers)) {
             array_unshift($this->unique_causers, 'System');
@@ -140,7 +135,6 @@ class LogViewer extends Component
                 }
             }
             
-            // Filter berdasarkan causer
             if ($this->filter_causer && $match) {
                 $causer = $entry['causer'] ?? '';
                 if ($causer !== $this->filter_causer) {

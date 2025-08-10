@@ -74,6 +74,19 @@ trait LogActivity
     }
 
     /**
+     * Mencatat peristiwa error.
+     *
+     * @param string $moduleName Nama modul yang melakukan aksi.
+     * @param string $message Pesan error.
+     * @param array<string, mixed> $context Data tambahan untuk log.
+     * @return void
+     */
+    protected function logError(string $moduleName, string $message, array $context = []): void
+    {
+        $this->log($moduleName, $message, 'error', $context);
+    }
+
+    /**
      * Mengembalikan konteks pengguna yang melakukan aksi.
      *
      * @return array<string, array<string, string|int|null>>
