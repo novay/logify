@@ -48,5 +48,9 @@ class LogifyServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/logify.php' => config_path('logify.php'),
         ], 'logify-config');
+
+        $this->publishes([
+            __DIR__.'/Resources/views' => resource_path('views/vendor/logify'),
+        ], 'logify-views');
     }
 }

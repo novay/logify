@@ -132,7 +132,7 @@ Setelah itu, Anda dapat memodifikasi *view* yang terletak di `resources/views/ve
 Anda dapat menyertakan *log viewer* di *template* Blade:
 
 ```blade
-<livewire:logify.log-viewer />
+<livewire:logify::log-viewer />
 ```
 
 -----
