@@ -21,7 +21,7 @@
     },
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^12.0", 
+        "laravel/framework": "^10.0|^11.0|^12.0", 
         "livewire/flux": "^2.1.1"
     }, 
     "extra": {
